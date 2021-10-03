@@ -3,6 +3,7 @@ import { useState } from 'react'
 import GoogleMapReact from 'google-map-react'
 import Marker from './Marker'
 import InfoWindow from "./InfoWindow"
+require ('dotenv').config()
 
 const Map = ({ eventData, center, zoom }) => {
     
@@ -28,7 +29,7 @@ const Map = ({ eventData, center, zoom }) => {
         <div className="map">
         {/* Load google map with API key and attributes with center and zoom level */}
             <GoogleMapReact
-                bootstrapURLKeys={{ key: 'AIzaSyD-556fa0QZcX_rgnkgkzIb9lagOD-qu7M' }}
+                bootstrapURLKeys={{ key: process.env.GO_key }}
                 defaultCenter={ center }
                 defaultZoom={ zoom }
             >
